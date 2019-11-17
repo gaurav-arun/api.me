@@ -1,0 +1,395 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1.0.0",
+    "title": "Gaurav Arun APIs",
+    "description": "Use these APIs to know me."
+  },
+  "host": "g8nhs848ei.execute-api.us-east-1.amazonaws.com",
+  "basePath": "/prod/v1",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/degrees": {
+      "get": {
+        "summary": "Degrees I have received",
+        "description": "Degrees I have received",
+        "tags": [
+          "Education"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Degrees"
+            },
+            "headers": {
+              "Content-Type": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/interests": {
+      "get": {
+        "summary": "My interests outside work",
+        "description": "My interests outside work",
+        "tags": [
+          "Personal"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Interests"
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/messages": {
+      "post": {
+        "summary": "Send me a message",
+        "description": "Send me a message",
+        "tags": [
+          "Contact"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Message",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Success"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/organizations": {
+      "get": {
+        "summary": "My work experience",
+        "description": "My work experience",
+        "tags": [
+          "Professional"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Organizations"
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/photos": {
+      "get": {
+        "summary": "My photo",
+        "description": "This is how i look",
+        "tags": [
+          "Personal"
+        ],
+        "produces": [
+          "image/png"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Photo"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/skills": {
+      "get": {
+        "summary": "My skillset",
+        "description": "My skillset",
+        "tags": [
+          "Professional"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Skills"
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/summary": {
+      "get": {
+        "summary": "Summary of my profile",
+        "description": "Summary of my profile",
+        "tags": [
+          "Professional"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Summary"
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/websites": {
+      "get": {
+        "summary": "My online portfolio",
+        "description": "Use these links to find out about my work",
+        "tags": [
+          "Professional"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Websites"
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Organization": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        }
+      },
+      "title": "Organization"
+    },
+    "Message": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "contact": {
+          "type": "string",
+          "pattern": "^\\d{10$}"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 500
+        }
+      },
+      "title": "Message"
+    },
+    "Websites": {
+      "title": "Websites",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Website"
+      }
+    },
+    "Degrees": {
+      "title": "Degrees",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Degree"
+      }
+    },
+    "Degree": {
+      "type": "object",
+      "properties": {
+        "degree": {
+          "type": "string"
+        },
+        "institute": {
+          "type": "string"
+        },
+        "graduated in": {
+          "type": "string"
+        }
+      },
+      "title": "Degree"
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "Error"
+    },
+    "Website": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "Website"
+    },
+    "Photo": {
+      "type": "string",
+      "title": "Photo",
+      "format": "binary"
+    },
+    "Interests": {
+      "title": "Interests",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Interest"
+      }
+    },
+    "Success": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "Success"
+    },
+    "Interest": {
+      "type": "string",
+      "title": "Interest"
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty"
+    },
+    "Skill": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        }
+      },
+      "title": "Skill"
+    },
+    "Skills": {
+      "title": "Skills",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Skill"
+      }
+    },
+    "Organizations": {
+      "title": "Organizations",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Organization"
+      }
+    },
+    "Summary": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        }
+      },
+      "title": "Summary"
+    }
+  }
+}
