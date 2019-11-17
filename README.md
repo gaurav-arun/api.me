@@ -3,6 +3,8 @@ This project has been created to showcase my ability to use various AWS services
 
 Hosted at: [https://api.gauravarun.com](https://api.gauravarun.com)
 
+Download: [gaurav_arun_resume](https://profilegauravarun.s3.amazonaws.com/gaurav_arun_resume.pdf)
+
 ## Technology Stack
 - Amazon Route53 - Domain Registrar and DNS service.
 - AWS Cloudfront - CDN Service for serving static files.
@@ -12,3 +14,7 @@ Hosted at: [https://api.gauravarun.com](https://api.gauravarun.com)
 - Amazon DynamoDB - Database for storing updated profile information and user messages.
 - Amazon S3 (Simple Storage Service) - Static website hosting.
 - Swagger-ui-dist - Documentation for APIs.
+
+## TODO: 
+- Architecture Diagram
+- `Download Resume` link in the API Documentation
