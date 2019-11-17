@@ -9,7 +9,7 @@ Download: [gaurav_arun_resume](https://profilegauravarun.s3.amazonaws.com/gaurav
 - `Amazon Route53` - Domain Registrar and DNS service.
 - `AWS Cloudfront` - CDN Service for serving static files.
 - `AWS Certificate Manager` - SSL Certificate provider.
-- `Amazon API Gateway` - REST endpoints for fethching information about me.
+- `Amazon API Gateway` - REST endpoints for fetching information about me.
 - `AWS Lambda` - Serverless compute to service API calls.
 - `Amazon DynamoDB` - Database for storing updated profile information and user messages.
 - `Amazon S3 (Simple Storage Service)` - Static website hosting.
